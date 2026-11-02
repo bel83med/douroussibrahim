@@ -3,181 +3,170 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>اختبار تفاعلي: الفيزياء والرياضيات – 3 متوسط</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
+<title>اختبار تفاعلي – الفيزياء والرياضيات | السنة الثالثة متوسط</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
-<script>document.documentElement.dataset.theme=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'</script>
 <style>
-:root{--bg:#f4f5fb;--card:#fff;--ink:#1a1b2e;--mut:#6b6f8a;--line:#e1e4f2;--ac:#5753ee;--ac2:#0d9488;--ok:#12a150;--okb:#e2f7ea;--no:#e5484d;--nob:#fdeaea;--sh:0 10px 30px rgba(50,50,120,.09)}
-[data-theme=dark]{--bg:#0e1020;--card:#171a31;--ink:#eceefb;--mut:#9a9fc4;--line:#2a2e52;--ac:#8b88ff;--ac2:#2dd4bf;--ok:#4ade80;--okb:#12301f;--no:#ff7b7f;--nob:#3a1a22;--sh:0 10px 30px rgba(0,0,0,.35)}
+:root{--bg:#f3f6fb;--card:#fff;--ink:#14213d;--mut:#5b6b88;--line:#dde4f0;--chem:#0e9f8e;--math:#5b5bd6;--ok:#16a34a;--bad:#dc2626;--okbg:#e8f8ee;--badbg:#fdecec;--acc:var(--math)}
+@media(prefers-color-scheme:dark){:root{--bg:#0d1424;--card:#151e33;--ink:#e8edf8;--mut:#93a1bf;--line:#26324d;--okbg:#10281b;--badbg:#321517;--chem:#2dd4bf;--math:#8b8bf5}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.8 Cairo,"Segoe UI",Tahoma,Arial,sans-serif;transition:background .3s}
-.hero{background:linear-gradient(135deg,#3730a3,#0d9488);color:#fff;padding:34px 18px 54px;border-radius:0 0 30px 30px;position:relative;overflow:hidden}
-.hero div{max-width:780px;margin:auto;position:relative}
-.hero h1{margin:0;font-size:clamp(1.6rem,5vw,2.4rem);font-weight:800;line-height:1.35}
-.hero p{margin:6px 0 0;opacity:.88}
-.hero:after{content:"H₂O  ¾  Fe₂O₃  −2/3";position:absolute;left:-10px;bottom:-14px;font-size:4.2rem;font-weight:800;opacity:.09;white-space:nowrap;direction:ltr}
-#bar{position:sticky;top:0;z-index:5;margin:-28px 12px 0;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh);padding:8px 12px}
-#bar>div{max-width:760px;margin:auto}
-.top{display:flex;align-items:center;gap:12px}
-.top svg{flex:none}
-.bg{fill:none;stroke:var(--line);stroke-width:4}
-.fg{fill:none;stroke:var(--ac2);stroke-width:4;stroke-linecap:round;stroke-dasharray:113.1;stroke-dashoffset:113.1;transition:stroke-dashoffset .5s}
-#sc{font-weight:800;font-size:1.1rem}
-#st{font-weight:800;color:#f59e0b;min-width:3.5em}
-.sp{flex:1}
-.ib{font:inherit;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:10px;padding:2px 12px;cursor:pointer}
-.ib:hover{border-color:var(--ac)}
-#tabs{display:flex;gap:6px;overflow-x:auto;padding:8px 0 4px;scrollbar-width:none}
-#tabs button{font:inherit;font-size:.9rem;white-space:nowrap;border:0;border-radius:999px;padding:3px 14px;background:transparent;color:var(--mut);cursor:pointer;transition:.2s}
-#tabs button b{font-size:.75rem;background:var(--line);color:var(--ink);border-radius:999px;padding:0 7px;margin-right:4px}
-#tabs button.on{background:var(--ac);color:#fff}
-#tabs button.full b{background:var(--ok);color:#fff}
-main{max-width:760px;margin:auto;padding:4px 14px 60px}
-h2{margin:26px 0 8px;font-size:1.25rem;font-weight:800}
-.q{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:16px 18px;margin:14px 0;box-shadow:var(--sh);transition:border-color .2s}
-.q.ok{border-color:var(--ok)}.q.no{border-color:var(--no)}
-.q.pop{animation:pop .35s}.q.shake{animation:shake .4s}
-@keyframes pop{50%{transform:scale(1.025)}}
-@keyframes shake{25%{transform:translateX(7px)}75%{transform:translateX(-7px)}}
-.q p{margin:0 0 6px;font-weight:600}
-.q p i{font-style:normal;display:inline-grid;place-items:center;width:1.7em;height:1.7em;border-radius:50%;background:var(--ac);color:#fff;font-size:.8rem;margin-left:8px}
-.x{direction:ltr;text-align:center;font-size:1.3rem;margin:10px 0;padding:8px;background:var(--bg);border-radius:12px;overflow-x:auto}
-.opts{display:grid;gap:9px;margin-top:10px}
-.opts.s{grid-template-columns:repeat(3,1fr)}
-.opts button{font:inherit;display:flex;gap:10px;align-items:center;text-align:right;padding:10px 12px;border:1.5px solid var(--line);border-radius:14px;background:transparent;color:inherit;cursor:pointer;transition:.15s}
-.opts button em{font-style:normal;flex:none;display:grid;place-items:center;width:1.9em;height:1.9em;border-radius:9px;background:var(--bg);font-weight:800;font-size:.85rem}
-.opts.s button{justify-content:center;font-size:1.4rem;font-weight:800}
-.opts button:hover:not(:disabled){border-color:var(--ac);transform:translateY(-2px)}
-.opts button.c{background:var(--okb);border-color:var(--ok)}
-.opts button.w{background:var(--nob);border-color:var(--no)}
-button:focus-visible,input:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
-.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:10px}
-input{font:inherit;direction:ltr;text-align:center;border:1.5px solid var(--line);border-radius:12px;padding:7px;background:var(--bg);color:inherit;width:10em}
-input.k{width:3.4em;padding:3px;border-radius:10px}
-input:focus{border-color:var(--ac)}
-.go{font:inherit;padding:8px 22px;border:0;border-radius:12px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;cursor:pointer;font-weight:800;transition:transform .15s}
-.go:hover:not(:disabled){transform:translateY(-2px)}.go:disabled{opacity:.45}
-.next{display:block;margin:22px auto 0}
-.eq{direction:ltr;display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;justify-content:center;font-size:1.15rem;margin:10px 0}
-.eq span{white-space:nowrap}
-.fb{margin-top:10px;padding:9px 13px;border-radius:12px;display:none}
-.fb.show{display:block}
-.ok .fb{background:var(--okb);color:var(--ok)}.no .fb{background:var(--nob);color:var(--no)}
-.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px;direction:ltr}
-.fr b{font-weight:600;border-bottom:1.5px solid currentColor;padding:0 3px}.fr i{font-style:normal}
-#end{display:none;background:var(--card);border:2px solid var(--ac);border-radius:22px;padding:24px;text-align:center;margin-top:30px;box-shadow:var(--sh)}
-#end.show{display:block;animation:pop .5s}
-#end svg{width:120px;height:120px}
-.cf{position:fixed;top:-20px;font-size:1.6rem;animation:fall 2.8s linear forwards;z-index:9}
-@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
-@media(max-width:480px){.opts.s{gap:6px}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,Tahoma,sans-serif;line-height:1.7;padding:max(16px,env(safe-area-inset-top)) 16px 40px}
+main{max-width:720px;margin:0 auto}
+h1{font-size:clamp(1.5rem,5vw,2.2rem);font-weight:800;margin:.6em 0 .2em}
+p.sub{color:var(--mut);margin:0 0 1.2em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:16px}
+.modes{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.mode{font:inherit;text-align:right;cursor:pointer;background:var(--card);color:var(--ink);border:2px solid var(--line);border-radius:16px;padding:16px}
+.mode b{display:block;font-size:1.15rem}.mode span{color:var(--mut);font-size:.9rem}
+.mode:hover,.mode:focus-visible{border-color:var(--c);outline:none}
+.bar{height:8px;background:var(--line);border-radius:8px;overflow:hidden;margin-bottom:14px}
+.bar i{display:block;height:100%;width:0;background:var(--acc);transition:width .35s}
+.meta{display:flex;justify-content:space-between;color:var(--mut);font-size:.9rem;margin-bottom:6px}
+.tag{font-weight:600;color:var(--acc)}
+.q{font-size:1.2rem;font-weight:600;margin:.4em 0 1em}
+.opts{display:grid;gap:10px}
+.opt{font:inherit;text-align:right;cursor:pointer;background:transparent;color:var(--ink);border:2px solid var(--line);border-radius:14px;padding:12px 16px}
+.opt:hover:not(:disabled){border-color:var(--acc)}
+.opt:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.opt.ok{border-color:var(--ok);background:var(--okbg)}.opt.no{border-color:var(--bad);background:var(--badbg)}
+.eq{direction:ltr;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;font-size:1.25rem;margin:1em 0}
+.eq input{width:3.2rem;height:2.6rem;text-align:center;font:inherit;font-size:1.1rem;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:10px}
+.eq input.ok{border-color:var(--ok);background:var(--okbg)}.eq input.no{border-color:var(--bad);background:var(--badbg)}
+.eq .t{white-space:nowrap}
+.ans{display:flex;gap:10px}
+.ans input{flex:1;font:inherit;font-size:1.1rem;padding:10px 14px;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);direction:ltr;text-align:center}
+.btn{font:inherit;font-weight:600;cursor:pointer;background:var(--acc);color:#fff;border:0;border-radius:12px;padding:11px 22px}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.fb{margin-top:14px;padding:12px 16px;border-radius:14px;display:none}
+.fb.ok{display:block;background:var(--okbg);border-right:5px solid var(--ok)}
+.fb.no{display:block;background:var(--badbg);border-right:5px solid var(--bad)}
+.nav{display:flex;justify-content:flex-end;margin-top:16px}
+.fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 4px;line-height:1.25;direction:ltr}
+.fr i{font-style:normal;padding:0 4px}.fr i:first-child{border-bottom:2px solid currentColor}
+.ltr{direction:ltr;unicode-bidi:isolate}
+.score{font-size:3.4rem;font-weight:800;text-align:center;color:var(--acc);margin:.1em 0}
+.rev{display:grid;gap:6px;margin:14px 0}
+.rev div{padding:8px 12px;border-radius:10px;background:var(--bg);font-size:.95rem}
+.rev .g{border-right:4px solid var(--ok)}.rev .w{border-right:4px solid var(--bad)}
+.hide{display:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-<div class="hero"><div><h1>اختبار تفاعلي: الفيزياء والرياضيات</h1>
-<p>السنة الثالثة متوسط — التحليل الكهربائي، موازنة المعادلات، الأعداد الناطقة</p></div></div>
-<div id="bar"><div>
-<div class="top"><svg width="46" height="46" viewBox="0 0 44 44"><circle class="bg" cx="22" cy="22" r="18"/><circle id="rg" class="fg" cx="22" cy="22" r="18" transform="rotate(-90 22 22)"/></svg>
-<span id="sc">0 / 0</span><span id="st"></span><span class="sp"></span>
-<button class="ib" id="th" title="تبديل الوضع">🌓</button><button class="ib" onclick="location.reload()">إعادة</button></div>
-<nav id="tabs"></nav></div></div>
-<main id="m"></main>
-
+<main>
+  <h1>اختبر مستواك: الفيزياء والرياضيات</h1>
+  <p class="sub">السنة الثالثة متوسط – موازنة المعادلات الكيميائية، التحليل الكهربائي، الأعداد النسبية والكسور.</p>
+  <section id="home" class="card">
+    <p style="margin-top:0;font-weight:600">اختر نوع التمارين</p>
+    <div class="modes">
+      <button class="mode" style="--c:var(--chem)" data-m="chem"><b>العلوم الفيزيائية</b><span>تحول كيميائي وموازنة المعادلات</span></button>
+      <button class="mode" style="--c:var(--math)" data-m="math"><b>الرياضيات</b><span>الأعداد النسبية والكسور</span></button>
+      <button class="mode" style="--c:var(--ink)" data-m="all"><b>اختبار شامل</b><span>كل الأسئلة معًا</span></button>
+    </div>
+  </section>
+  <section id="quiz" class="card hide">
+    <div class="meta"><span id="tag" class="tag"></span><span id="cnt"></span></div>
+    <div class="bar"><i id="pb"></i></div>
+    <div id="q" class="q"></div>
+    <div id="body"></div>
+    <div id="fb" class="fb" role="status" aria-live="polite"></div>
+    <div class="nav"><button id="next" class="btn hide">التالي</button></div>
+  </section>
+  <section id="end" class="card hide"></section>
+</main>
 <script>
-const fr=s=>s.replace(/(-?\d+)\/(\d+)/g,'<span class="fr"><b>$1</b><i>$2</i></span>');
-const fm=s=>s.replace(/([A-Za-z)])(\d+)/g,'$1<sub>$2</sub>');
-const LT=['&lt;','&gt;','='];
-const cmp=(x,a,e,q='ضع الرمز المناسب (&lt; أو &gt; أو =):')=>({q,x,o:LT,a,e,s:1});
-const bal=(t,c,q='وازن المعادلة الكيميائية التالية:')=>{const[r,p]=t.split('>').map(z=>z.trim().split(' + '));return{q,r,p,c}};
-const S=[
-{n:'1) التحليل الكهربائي للماء',q:[
-{q:'لماذا نضيف الصودا إلى الماء؟ وكيف يسمى المحلول الناتج؟',o:['لجعل الماء ناقلاً للتيار الكهربائي؛ ويسمى محلولاً شاردياً (إلكتروليتياً)','لرفع درجة حرارة الماء؛ ويسمى محلولاً حمضياً','لتغيير لون الماء؛ ويسمى محلولاً ملحياً','لإنتاج غاز ثالث؛ ويسمى مزيجاً غازياً'],a:0,e:'الماء النقي ضعيف التوصيل، وإضافة الصودا تزوده بالشوارد (الأيونات) فيصبح محلولاً شاردياً ناقلاً للتيار.'},
-{q:'عيانياً، ما هي النواتج المتشكلة عند التحليل الكهربائي للماء؟',o:['غاز الأكسجين وغاز الهيدروجين','غاز الأكسجين وغاز ثنائي أكسيد الكربون','الهيدروجين والصودا','الأكسجين والصودا'],a:0,e:'النواتج: غاز الأكسجين O<sub>2</sub> وغاز الهيدروجين H<sub>2</sub>، أما الصودا فتبقى في وعاء التحليل.'},
-{q:'مجهرياً، ما هي الأفراد الكيميائية للمتفاعلات والنواتج؟',o:['المتفاعل: جزيئات H<sub>2</sub>O — النواتج: جزيئات H<sub>2</sub> وجزيئات O<sub>2</sub>','المتفاعل: ذرات H وذرات O — النواتج: جزيئات H<sub>2</sub>O','المتفاعل: جزيئات H<sub>2</sub> وO<sub>2</sub> — النواتج: جزيئات H<sub>2</sub>O','المتفاعل: جزيئات NaOH — النواتج: ذرات H وO'],a:0,e:'الماء يتكون من جزيئات H<sub>2</sub>O تتحول إلى جزيئات H<sub>2</sub> وجزيئات O<sub>2</sub>.'},
-bal('H2O (l) > H2 (g) + O2 (g)',[2,2,1],'اكتب معادلة التحليل الكهربائي للماء مع وزنها (الحالة الفيزيائية موضحة):'),
-bal('Fe (s) + HCl (aq) > FeCl2 (aq) + H2 (g)',[1,2,1,1]),
-bal('CuO (s) + C (s) > CO2 (g) + Cu (s)',[2,1,1,2])]},
-{n:'2) تلحيم السكك الحديدية',q:[
-{q:'عند تلحيم السكك، يُسخَّن مزيج من Al وFe<sub>2</sub>O<sub>3</sub>. ما هي المتفاعلات والنواتج عيانياً؟',o:['المتفاعلات: الألمنيوم وأكسيد الحديد الثلاثي — النواتج: الألومين والحديد السائل','المتفاعلات: الألومين والحديد — النواتج: الألمنيوم وأكسيد الحديد','المتفاعلات: الألمنيوم والحديد — النواتج: الألومين فقط','المتفاعلات: الألومين وأكسيد الحديد — النواتج: الحديد فقط'],a:0,e:'Al وFe<sub>2</sub>O<sub>3</sub> يتفاعلان فينتج Al<sub>2</sub>O<sub>3</sub> (الألومين) وFe السائل.'},
-bal('Al (s) + Fe2O3 (s) > Al2O3 (s) + Fe (l)',[2,1,1,2],'اكتب معادلة التفاعل ووازنها مع الحالة الفيزيائية:')]},
-{n:'3) موازنة المعادلات الكيميائية',q:[
-['H2 + O2 > H2O',[2,1,2]],['CH4 + O2 > CO2 + H2O',[1,2,1,2]],['C3H8 + O2 > CO2 + H2O',[1,5,3,4]],['Zn + O2 > ZnO',[2,1,2]],['S + O2 > SO2',[1,1,1]],['SO2 + O2 > SO3',[2,1,2]],['Al + O2 > Al2O3',[4,3,2]],['Zn + HCl > ZnCl2 + H2',[1,2,1,1]],['N2 + H2 > NH3',[1,3,2]],['H2O2 > H2O + O2',[2,2,1]],['N2 + Mg > Mg3N2',[1,3,1]],['Fe + O2 > Fe2O3',[4,3,2]],['N2 + O2 > NO',[1,1,2]],['Al + FeO > Al2O3 + Fe',[2,3,1,3]],['P4 + O2 > P2O3',[1,3,2]],['Sn + HCl > SnCl2 + H2',[1,2,1,1]],['K + Br2 > KBr',[2,1,2]],['FeS2 + O2 > Fe2O3 + SO2',[4,11,2,8]],['C + H2 > CH4',[1,2,1]],['C2H6 + O2 > CO2 + H2O',[2,7,4,6]],['C3H6 + O2 > CO2 + H2O',[2,9,6,6]],['Fe + H2O > Fe3O4 + H2',[3,4,1,4]],['Sb + O2 > Sb2O3',[4,3,2]],['KClO3 > KCl + O2',[2,2,3]]].map(z=>bal(...z))},
-{n:'4) مقارنة كسرين',q:[
-cmp('3/7 ... 5/7',0,'المقامان متساويان: نقارن البسطين 3 &lt; 5.'),
-cmp('2/9 ... 2/5',0,'البسطان متساويان: الكسر ذو المقام الأكبر هو الأصغر، و 9 &gt; 5.'),
-cmp('-2/5 ... 1/3',0,'العدد السالب دائماً أصغر من العدد الموجب.'),
-cmp('-3/7 ... -5/7',1,'3 &lt; 5 إذن -3 &gt; -5، فنحصل على -3/7 &gt; -5/7.'),
-cmp('5/8 ... 3/4',0,'3/4 = 6/8 و 5 &lt; 6.'),
-cmp('2/3 ... 3/4',0,'بالضرب التبادلي: 2×4 = 8 و 3×3 = 9، و 8 &lt; 9.','قارن باستعمال الضرب التبادلي:'),
-cmp('5/6 ... 7/9',1,'5×9 = 45 و 7×6 = 42، و 45 &gt; 42.','قارن باستعمال الضرب التبادلي:'),
-cmp('4/7 ... 5/8',0,'4×8 = 32 و 5×7 = 35، و 32 &lt; 35.','قارن باستعمال الضرب التبادلي:'),
-cmp('3/5 ... 7/10',0,'3×10 = 30 و 7×5 = 35، و 30 &lt; 35.','قارن باستعمال الضرب التبادلي:'),
-cmp('-5/6 ... -3/4',0,'نوحد المقامات: -10/12 و -9/12، و -10 &lt; -9.','تحدٍّ: قارن بين الكسرين:'),
-cmp('7/12 ... 5/8',0,'نوحد المقامات: 14/24 و 15/24، و 14 &lt; 15.','تحدٍّ: قارن بين الكسرين:'),
-{q:'رتّب الكسور تصاعدياً: 1/2 ، 3/4 ، 2/5',o:['2/5 &lt; 1/2 &lt; 3/4','1/2 &lt; 2/5 &lt; 3/4','3/4 &lt; 1/2 &lt; 2/5'],a:0,e:'بالمقام 20: 10/20 ، 15/20 ، 8/20.'},
-{q:'رتّب الكسور تصاعدياً: -1/3 ، 1/4 ، -2/3',o:['-2/3 &lt; -1/3 &lt; 1/4','-1/3 &lt; -2/3 &lt; 1/4','1/4 &lt; -1/3 &lt; -2/3'],a:0,e:'السالبان أصغر من الموجب، و -2 &lt; -1 إذن -2/3 &lt; -1/3.'},
-{q:'رتّب الكسور تنازلياً (من الأكبر إلى الأصغر): 2/7 ، 5/7 ، 3/7',o:['5/7 &gt; 3/7 &gt; 2/7','2/7 &gt; 3/7 &gt; 5/7','3/7 &gt; 5/7 &gt; 2/7'],a:0,e:'المقامات متساوية فنرتب البسوط: 5 &gt; 3 &gt; 2.'},
-{q:'هل العبارة صحيحة؟ -2/3 &gt; -3/4',o:['صحيحة','خاطئة'],a:0,e:'-2/3 = -8/12 و -3/4 = -9/12، و -8 &gt; -9 إذن العبارة صحيحة.'}]},
-{n:'5) حسابات على الأعداد الناطقة (فرض الفصل الأول)',q:[
-{q:'احسب A:',x:'A = (-15) ÷ (+3) × (-4) + (-7) × (+5)',ans:['-15'],e:'(-15)÷3 = -5 ثم -5×(-4) = 20 ثم (-7)×5 = -35، فيكون 20 - 35 = -15.'},
-{q:'احسب B:',x:'B = [(-8) × (+6) × (-3)] / [(+4) × (-12)]',ans:['-3'],e:'البسط = 144 (عاملان سالبان) والمقام = -48، إذن B = -3.'},
-{q:'مقلوب العدد A = -15 هو:',ans:['-1/15'],e:'مقلوب a هو 1/a، إذن مقلوب -15 هو -1/15.'},
-{q:'معاكس العدد B = -3 هو:',ans:['3'],e:'معاكس -3 هو 3.'},
-{q:'احسب C واختزل النتيجة:',x:'C = 7/15 - 5/12 + (-1/20)',ans:['0'],e:'بالمقام المشترك 60: 28/60 - 25/60 - 3/60 = 0.'},
-{q:'احسب D واختزل النتيجة:',x:'D = (3/4 - 5/6) ÷ (2/3 + 1/2)',ans:['-1/14'],e:'3/4 - 5/6 = -1/12 و 2/3 + 1/2 = 7/6، إذن D = -1/12 × 6/7 = -1/14.'},
-{q:'هل D = -1/14 عدد عشري؟',o:['نعم','لا'],a:1,e:'المقام 14 = 2×7 يحوي العامل الأولي 7 غير 2 و 5، فليس عدداً عشرياً (قيمته العشرية غير منتهية).'},
-{q:'سباق للدراجات طوله 150 km: المرحلة 1 تمثل 3/10 والمرحلة 2 تمثل 7/15. أيهما أطول؟',o:['المرحلة الثانية','المرحلة الأولى','متساويتان'],a:0,e:'3/10 = 9/30 و 7/15 = 14/30، و 14/30 &gt; 9/30.'},
-{q:'ما الكسر الذي يمثل المرحلة الثالثة (في أبسط شكل)؟',ans:['7/30'],e:'1 - 9/30 - 14/30 = 7/30.'},
-{q:'استهلك متسابق 3/5 من قارورة سعتها 2/3 L. احسب الحجم المستهلك باللتر (في أبسط شكل):',ans:['2/5','0.4'],e:'3/5 × 2/3 = 6/15 = 2/5 L.'},
-{q:'المسافة المقطوعة في المرحلة الأولى بالكيلومتر (km):',ans:['45'],e:'3/10 × 150 = 45 km.'},
-{q:'المسافة المقطوعة في المرحلة الثانية بالكيلومتر (km):',ans:['70'],e:'7/15 × 150 = 70 km.'},
-{q:'المسافة المقطوعة في المرحلة الثالثة بالكيلومتر (km):',ans:['35'],e:'7/30 × 150 = 35 km (والمجموع 45 + 70 + 35 = 150).'},
-{q:'حدد إشارة العبارة A = (+2) × (-1) × (1) × (-3):',o:['موجبة','سالبة'],a:0,e:'يوجد عاملان سالبان (عدد زوجي) فالجداء موجب، و A = 6.'},
-{q:'حدد إشارة العبارة B = [(-5)×(-2)] ÷ [(-2)×(1)]:',o:['موجبة','سالبة'],a:1,e:'البسط = 10 والمقام = -2 إذن B = -5 سالب.'},
-{q:'احسب D واختزل:',x:'D = 5/3 + 4/3 × (-3/3)',ans:['1/3'],e:'4/3 × (-1) = -4/3، ثم 5/3 - 4/3 = 1/3.'},
-{q:'احسب E واختزل:',x:'E = (7/2 - 7/3) ÷ (4/6)',ans:['7/4'],e:'7/2 - 7/3 = 7/6 ثم 7/6 × 6/4 = 7/4.'},
-{q:'احسب F واختزل:',x:'F = (2/4 - 1/4) × 4/3',ans:['1/3'],e:'1/4 × 4/3 = 1/3.'},
-{q:'هل E = 7/4 عدد عشري؟',o:['نعم، E = 1.75','لا'],a:0,e:'المقام 4 = 2² فقط، إذن E عدد عشري: 7/4 = 1.75.'}]}
+const F=s=>s.replace(/\{(-?\d+)\/(\d+)\}/g,'<span class="fr"><i>$1</i><i>$2</i></span>');
+const sub=s=>s.replace(/([A-Za-z\)])(\d+)/g,'$1<sub>$2</sub>');
+const B=(r,p,a,st)=>({k:'chem',t:'bal',r,p,a,st,q:'وازن المعادلة الكيميائية التالية (اترك الخانة فارغة إذا كان المعامل 1):'});
+const M=(q,o,c,e,k='math')=>({k,t:'mcq',q,o,c,e});
+const N=(q,a,e,k='math')=>({k,t:'num',q,a:[].concat(a),e});
+const CMP=(a,b,c,e)=>M(`ضع الرمز المناسب: ${a} … ${b}`,['>','<','='],c,e);
+const Q=[
+// ---- الفيزياء
+M('في التحليل الكهربائي للماء، لماذا نضيف الصودا (هيدروكسيد الصوديوم)؟',['لتغيير لون الماء','لجعل المحلول ناقلًا للتيار الكهربائي','لتبريد المحلول','لتسريع تبخر الماء'],1,'الماء النقي ضعيف التوصيل، والصودا تجعله محلولًا شاردياً يوصل التيار ويسمى «الإلكتروليت».','chem'),
+M('الأفراد الكيميائية (مجهريًا) للمتفاعل في التحليل الكهربائي للماء هي:',['جزيئات H₂O','ذرات O وذرات H منفصلة','جزيئات O₂ فقط','شوارد Na⁺ فقط'],0,'المتفاعل هو الماء، أي جزيئات H₂O.','chem'),
+M('الأنواع الكيميائية الناتجة عن التحليل الكهربائي للماء هي:',['غاز الأكسجين وغاز الهيدروجين','غاز الأكسجين وغاز الآزوت','الهيدروجين والصودا','CO₂ وH₂O'],0,'ينتج غاز الأكسجين O₂ وغاز الهيدروجين H₂.','chem'),
+B(['H2O(l)'],['H2(g)','O2(g)'],[2,2,1],'2H₂O → 2H₂ + O₂'),
+B(['Fe','HCl'],['FeCl2','H2'],[1,2,1,1],'Fe + 2HCl → FeCl₂ + H₂'),
+B(['CuO','C'],['CO2','Cu'],[2,1,1,2],'2CuO + C → CO₂ + 2Cu'),
+M('في تلحيم السكك الحديدية: نسخن مزيجًا من الألمنيوم Al وأكسيد الحديد الثلاثي Fe₂O₃. ما هي المتفاعلات؟',['Al₂O₃ و Fe','Al و Fe₂O₃','Al و Fe','Fe₂O₃ و Fe'],1,'المتفاعلات هي Al وFe₂O₃، والنواتج Al₂O₃ وFe (الحديد السائل).','chem'),
+B(['Al','Fe2O3'],['Al2O3','Fe'],[2,1,1,2],'2Al + Fe₂O₃ → Al₂O₃ + 2Fe'),
+B(['CH4','O2'],['CO2','H2O'],[1,2,1,2],'CH₄ + 2O₂ → CO₂ + 2H₂O'),
+B(['C3H8','O2'],['CO2','H2O'],[1,5,3,4],'C₃H₈ + 5O₂ → 3CO₂ + 4H₂O'),
+B(['Zn','O2'],['ZnO'],[2,1,2],'2Zn + O₂ → 2ZnO'),
+B(['SO2','O2'],['SO3'],[2,1,2],'2SO₂ + O₂ → 2SO₃'),
+B(['Al','O2'],['Al2O3'],[4,3,2],'4Al + 3O₂ → 2Al₂O₃'),
+B(['N2','H2'],['NH3'],[1,3,2],'N₂ + 3H₂ → 2NH₃'),
+B(['N2','Mg'],['Mg3N2'],[1,3,1],'N₂ + 3Mg → Mg₃N₂'),
+B(['Fe','O2'],['Fe2O3'],[4,3,2],'4Fe + 3O₂ → 2Fe₂O₃'),
+B(['FeS2','O2'],['Fe2O3','SO2'],[4,11,2,8],'4FeS₂ + 11O₂ → 2Fe₂O₃ + 8SO₂'),
+B(['KClO3'],['KCl','O2'],[2,2,3],'2KClO₃ → 2KCl + 3O₂'),
+B(['Fe','H2O'],['Fe3O4','H2'],[3,4,1,4],'3Fe + 4H₂O → Fe₃O₄ + 4H₂'),
+// ---- الرياضيات
+CMP('{3/7}','{5/7}',1,'نفس المقام، نقارن البسطين: 3 < 5.'),
+CMP('{2/9}','{2/5}',1,'نفس البسط، الكسر ذو المقام الأكبر هو الأصغر: {2/9} < {2/5}.'),
+CMP('{-2/5}','{1/3}',1,'العدد السالب أصغر من الموجب.'),
+CMP('{-3/7}','{-5/7}',0,'-3 > -5 والمقامان متساويان.'),
+CMP('{5/8}','{3/4}',1,'{5/8} و{6/8}: 5 < 6.'),
+M('قارن باستعمال الضرب التبادلي: {2/3} … {3/4}',['>','<','='],1,'2×4 = 8 و 3×3 = 9، إذن 8 < 9 أي {2/3} < {3/4}.'),
+M('قارن: {5/6} … {7/9}',['>','<','='],0,'5×9 = 45 و 6×7 = 42، 45 > 42 إذن {5/6} > {7/9}.'),
+M('قارن: {3/5} … {7/10}',['>','<','='],1,'3×10 = 30 و 5×7 = 35 إذن {3/5} < {7/10}.'),
+M('رتب تصاعديًا: {1/2} ، {3/4} ، {2/5}',['{2/5} < {1/2} < {3/4}','{1/2} < {2/5} < {3/4}','{3/4} < {1/2} < {2/5}'],0,'على المقام 20: {10/20} ، {15/20} ، {8/20}.'),
+M('رتب تنازليًا: {2/7} ، {5/7} ، {3/7}',['{5/7} > {3/7} > {2/7}','{2/7} > {3/7} > {5/7}','{3/7} > {5/7} > {2/7}'],0,'المقامات متساوية، نرتب البسوط من الأكبر للأصغر.'),
+M('رتب تصاعديًا: {-1/3} ، {1/4} ، {-2/3}',['{-1/3} < {-2/3} < {1/4}','{-2/3} < {-1/3} < {1/4}','{1/4} < {-1/3} < {-2/3}'],1,'السالبان أولًا: {-2/3} < {-1/3}، ثم الموجب {1/4}.'),
+M('قارن: {-5/6} … {-3/4}',['>','<','='],1,'على المقام 12: {-10/12} و{-9/12}، و -10 < -9.'),
+M('هل العبارة صحيحة؟ {-2/3} > {-3/4}',['صحيحة','خاطئة'],0,'{-8/12} > {-9/12} لأن -8 > -9.'),
+M('ما إشارة A = (+2) × (−1) × (1) × (−3) ؟',['موجبة','سالبة','معدومة'],0,'عدد العوامل السالبة 2 (زوجي) فالجداء موجب، و A = 6.'),
+N('احسب B = ((−5) × (−2)) ÷ ((−2) × (1))','-5','البسط 10 والمقام -2، إذن B = -5.'),
+N('احسب A = (−15) ÷ (+3) × (−4) + (−7) × (+5)','-15','(-5)×(-4) = 20 ثم 20 + (-35) = -15.'),
+N('احسب B = [(−8) × (+6) × (−3)] ÷ [(+4) × (−12)]','-3','البسط 144 والمقام -48، إذن B = -3.'),
+N('احسب C = {7/15} − {5/12} + ({-1/20}) واكتب النتيجة في أبسط شكل','0','على المقام 60: {28/60} − {25/60} − {3/60} = 0.'),
+N('احسب D = ({3/4} − {5/6}) ÷ ({2/3} + {1/2}) واكتب النتيجة كسرًا مبسطًا (مثال: 1/2)','-1/14','{-1/12} ÷ {7/6} = {-1/12} × {6/7} = {-1/14}. المقام 14 يحتوي العامل 7، فهو ليس عددًا عشريًا.'),
+N('احسب D = {5/3} + {4/3} × {-3/3}','1/3','{4/3} × (-1) = {-4/3} ثم {5/3} − {4/3} = {1/3}.'),
+N('احسب E = ({7/2} − {7/3}) ÷ {4/6} واكتب النتيجة كسرًا مبسطًا','7/4','{7/6} × {6/4} = {7/4}. وهو عدد عشري = 1.75.'),
+M('سباق دراجات طوله 150 km: المرحلة الأولى {3/10} من الإجمالي والثانية {7/15}. أيهما أطول؟',['الأولى','الثانية','متساويتان'],1,'على المقام 30: {9/30} < {14/30}.'),
+N('في نفس السباق، أي كسر يمثل المرحلة الثالثة؟ (مبسطًا)','7/30','1 − {9/30} − {14/30} = {7/30}.'),
+N('استهلك متسابق {3/5} من قارورة سعتها {2/3} L. كم لترًا استهلك؟ (كسر مبسط)','2/5','{3/5} × {2/3} = {6/15} = {2/5} L.'),
+N('ما المسافة (بالكيلومتر) للمرحلة الثانية من السباق؟','70','{7/15} × 150 = 70 km.'),
 ];
-const m=document.getElementById('m'),tabs=document.getElementById('tabs');
-const L=['أ','ب','ج','د'],short=['التحليل الكهربائي','التلحيم','موازنة المعادلات','مقارنة الكسور','حسابات'];
-let N=0,done=0,good=0,streak=0;const sc=[];
-function go(i){document.querySelectorAll('.sec').forEach((s,j)=>s.hidden=j!=i);[...tabs.children].forEach((t,j)=>t.classList.toggle('on',j==i));scrollTo({top:0,behavior:'smooth'})}
-function ring(p,r){return '<svg viewBox="0 0 44 44"><circle class="bg" cx="22" cy="22" r="18"/><circle class="fg" cx="22" cy="22" r="18" transform="rotate(-90 22 22)" style="stroke-dashoffset:'+113.1*(1-p)+'"/></svg>'}
-function upd(){document.getElementById('sc').textContent=good+' / '+N;document.getElementById('rg').style.strokeDashoffset=113.1*(1-done/N);
- document.getElementById('st').textContent=streak>1?'🔥 '+streak:'';
- sc.forEach((s,i)=>{const t=tabs.children[i];t.querySelector('b').textContent=s.d+'/'+s.t;t.classList.toggle('full',s.d==s.t)});
- if(done==N){const p=good/N,e=document.getElementById('end');e.className='show';
-  e.innerHTML=ring(p)+'<h2 style="margin:0">'+good+' من '+N+' ('+Math.round(100*p)+'%)</h2><p>'+(p>=.8?'ممتاز! أحسنت 🎉':p>=.5?'جيد، راجع الأسئلة الخاطئة.':'تحتاج إلى مزيد من المراجعة، حاول مرة أخرى.')+'</p>';
-  if(p>=.8)for(let i=0;i<26;i++){const c=document.createElement('span');c.className='cf';c.textContent=['🎉','✨','🧪','⭐'][i%4];c.style.left=Math.random()*95+'%';c.style.animationDelay=Math.random()*.8+'s';document.body.append(c);setTimeout(()=>c.remove(),4000)}
-  e.scrollIntoView({behavior:'smooth',block:'center'})}}
-function fin(c,ok,t,e){if(c.dataset.d)return;c.dataset.d=1;done++;sc[c.dataset.s].d++;if(ok){good++;streak++}else streak=0;
- c.classList.add(ok?'ok':'no',ok?'pop':'shake');
- const f=c.querySelector('.fb');f.innerHTML=(ok?'✔ إجابة صحيحة. ':'✘ إجابة خاطئة. '+(t?'الصحيح: '+t+'. ':''))+(e?fr(e):'');f.classList.add('show');
- c.querySelectorAll('button,input').forEach(b=>b.disabled=true);upd()}
-const norm=v=>v.replace(/[\s٫]/g,'').replace('−','-').replace('÷','/').replace(/[٠-٩]/g,d=>d.charCodeAt(0)-1632).replace(',','.');
-S.forEach((sec,si)=>{sc.push({t:sec.q.length,d:0});
- const tb=document.createElement('button');tb.innerHTML=short[si]+' <b></b>';tb.onclick=()=>go(si);tabs.append(tb);
- const w=document.createElement('section');w.className='sec';w.innerHTML='<h2>'+sec.n+'</h2>';
- sec.q.forEach((q,qi)=>{N++;const c=document.createElement('div');c.className='q';c.dataset.s=si;
-  let h='<p><i>'+(qi+1)+'</i>'+fr(q.q)+'</p>'+(q.x?'<div class="x">'+fr(q.x)+'</div>':'');
-  if(q.o)h+='<div class="opts'+(q.s?' s':'')+'">'+q.o.map((o,i)=>'<button data-i="'+i+'">'+(q.s?'':'<em>'+L[i]+'</em>')+'<span>'+fr(o)+'</span></button>').join('')+'</div>';
-  else if(q.ans)h+='<div class="row"><input placeholder="الإجابة" aria-label="الإجابة"><button class="go">تحقق</button></div>';
-  else{const t=(a,o)=>a.map((z,i)=>'<span><input class="k" inputmode="numeric" placeholder="1" aria-label="المعامل"> '+fm(z)+'</span>').join('<span>+</span>');
-   h+='<div class="eq">'+t(q.r,0)+'<span>→</span>'+t(q.p,q.r.length)+'</div><div class="row"><button class="go">تحقق</button></div>'}
-  c.innerHTML=h+'<div class="fb" role="status"></div>';w.append(c);
-  if(q.o)c.querySelectorAll('.opts button').forEach(b=>b.onclick=()=>{const i=+b.dataset.i,ok=i==q.a;b.classList.add(ok?'c':'w');c.querySelectorAll('.opts button')[q.a].classList.add('c');fin(c,ok,'',q.e)});
-  else{const run=()=>{if(q.ans){const v=norm(c.querySelector('input').value);if(!v)return;fin(c,q.ans.includes(v),fr(q.ans[0]),q.e)}
-   else{const ins=[...c.querySelectorAll('.k')].map(i=>parseInt(i.value)||1);fin(c,ins.every((v,i)=>v==q.c[i]),'المعاملات بالترتيب: '+q.c.join(' ، '),'')}};
-   c.querySelector('.go').onclick=run;c.querySelectorAll('input').forEach(i=>i.onkeydown=e=>e.key=='Enter'&&run())}
- });
- if(si<S.length-1){const n=document.createElement('button');n.className='go next';n.textContent='القسم التالي ←';n.onclick=()=>go(si+1);w.append(n)}
- m.append(w)});
-m.insertAdjacentHTML('beforeend','<div id="end"></div>');
-document.getElementById('th').onclick=()=>{const d=document.documentElement;d.dataset.theme=d.dataset.theme=='dark'?'light':'dark'};
-go(0);upd();
+const $=id=>document.getElementById(id);
+const norm=s=>s.trim().replace(/\s+/g,'').replace('−','-').replace(',','.');
+let L,i,score,res;
+function start(m){L=Q.filter(q=>m==='all'||q.k===m);i=0;score=0;res=[];
+ ['home','end'].forEach(x=>$(x).classList.add('hide'));$('quiz').classList.remove('hide');show();}
+function show(){const q=L[i],b=$('body');
+ document.documentElement.style.setProperty('--acc',q.k==='chem'?'var(--chem)':'var(--math)');
+ $('tag').textContent=q.k==='chem'?'العلوم الفيزيائية':'الرياضيات';
+ $('cnt').textContent=`${i+1} / ${L.length}`;$('pb').style.width=(i/L.length*100)+'%';
+ $('q').innerHTML=F(q.q);$('fb').className='fb';$('next').classList.add('hide');b.innerHTML='';
+ if(q.t==='mcq'){const d=document.createElement('div');d.className='opts';
+  q.o.forEach((o,j)=>{const x=document.createElement('button');x.className='opt';x.innerHTML=F(o);x.onclick=()=>check(j===q.c,q,d);d.append(x)});b.append(d);}
+ else if(q.t==='num'){b.innerHTML='<div class="ans"><input id="a" inputmode="text" autocomplete="off" aria-label="الإجابة"><button class="btn" id="ok">تحقق</button></div>';
+  const go=()=>{const v=norm($('a').value);if(!v)return;check(q.a.map(norm).includes(v),q)};$('ok').onclick=go;$('a').onkeydown=e=>e.key==='Enter'&&go();$('a').focus();}
+ else{const n=q.r.length+q.p.length;let h='<div class="eq">',k=0;
+  const term=(f)=>`<input inputmode="numeric" data-k="${k++}" aria-label="معامل ${f}"><span class="t">${sub(f)}</span>`;
+  h+=q.r.map(term).join('<span>+</span>')+'<span>→</span>'+q.p.map(term).join('<span>+</span>')+'</div><button class="btn" id="ok">تحقق</button>';
+  b.innerHTML=h;b.querySelector('input').focus();
+  $('ok').onclick=()=>{const ins=[...b.querySelectorAll('input')];let all=true;
+   ins.forEach((x,j)=>{const v=x.value.trim()===''?1:+x.value;const g=v===q.a[j];all=all&&g;x.className=g?'ok':'no';x.disabled=true});check(all,q)};}
+}
+function check(ok,q,d){
+ if(d)[...d.children].forEach((x,j)=>{x.disabled=true;if(j===q.c)x.classList.add('ok');else if(x===event.currentTarget)x.classList.add('no')});
+ const a=$('ok');if(a)a.disabled=true;const inp=$('a');if(inp)inp.disabled=true;
+ if(ok)score++;res.push([ok,q]);
+ const f=$('fb');f.className='fb '+(ok?'ok':'no');
+ const ans=q.t==='bal'?`<div class="ltr">${q.e}</div>`:F(q.e);
+ f.innerHTML=(ok?'<b>إجابة صحيحة!</b> ':'<b>ليست صحيحة.</b> ')+ans;
+ const n=$('next');n.textContent=i===L.length-1?'النتيجة':'التالي';n.classList.remove('hide');n.focus();}
+$('next').onclick=()=>{i++;i<L.length?show():finish()};
+function finish(){$('quiz').classList.add('hide');const e=$('end');e.classList.remove('hide');
+ const p=Math.round(score/L.length*100);
+ const msg=p>=80?'ممتاز! مستوى رائع.':p>=50?'جيد، راجع الأخطاء وأعد المحاولة.':'لا بأس، راجع الدروس وأعد المحاولة.';
+ e.innerHTML=`<div class="score">${score} / ${L.length}</div><p style="text-align:center;margin:0">${msg}</p>
+ <div class="rev">${res.map(([o,q],j)=>`<div class="${o?'g':'w'}">${j+1}. ${q.t==='bal'?'<span class="ltr">'+sub(q.r.join(' + ')+' → '+q.p.join(' + '))+'</span>':F(q.q)}</div>`).join('')}</div>
+ <button class="btn" id="re">إعادة الاختبار</button>`;
+ $('re').onclick=()=>{e.classList.add('hide');$('home').classList.remove('hide')};}
+document.querySelectorAll('.mode').forEach(b=>b.onclick=()=>start(b.dataset.m));
 </script>
 </body>
 </html>
