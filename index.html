@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>اختبار تفاعلي – الفيزياء والرياضيات | السنة الثالثة متوسط</title>
+<title>اختبار تفاعلي – السنة الثالثة متوسط | العلوم الفيزيائية والتكنولوجيا والرياضيات</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
@@ -48,19 +48,21 @@ p.sub{color:var(--mut);margin:0 0 1.2em}
 .rev{display:grid;gap:6px;margin:14px 0}
 .rev div{padding:8px 12px;border-radius:10px;background:var(--bg);font-size:.95rem}
 .rev .g{border-right:4px solid var(--ok)}.rev .w{border-right:4px solid var(--bad)}
-.hide{display:none}
+.hide{display:none}.gov{text-align:center;font-size:.85rem;color:var(--mut);border-bottom:2px solid var(--line);padding-bottom:10px;margin-bottom:6px}.gov b{display:block;color:var(--ink);font-size:.95rem}.lv{display:inline-block;background:var(--acc);color:#fff;border-radius:10px;padding:2px 12px;font-weight:600;font-size:.9rem}.nm{width:100%;font:inherit;padding:10px 14px;margin-bottom:14px;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink)}.foot{text-align:center;color:var(--mut);margin-top:24px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 <main>
-  <h1>اختبر مستواك: الفيزياء والرياضيات</h1>
-  <p class="sub">السنة الثالثة متوسط – موازنة المعادلات الكيميائية، التحليل الكهربائي، الأعداد النسبية والكسور.</p>
+  <div class="gov"><b>الجمهورية الجزائرية الديمقراطية الشعبية</b>وزارة التربية الوطنية</div>
+  <h1>تحضير فرض الفصل الأول</h1>
+  <p class="sub"><span class="lv">السنة الثالثة متوسط</span> &nbsp;العلوم الفيزيائية والتكنولوجيا – الرياضيات. التقييم على 20 كما في الفروض.</p>
   <section id="home" class="card">
-    <p style="margin-top:0;font-weight:600">اختر نوع التمارين</p>
+    <input id="nm" class="nm" placeholder="الاسم واللقب (اختياري)" autocomplete="name">
+    <p style="margin-top:0;font-weight:600">اختر المادة</p>
     <div class="modes">
-      <button class="mode" style="--c:var(--chem)" data-m="chem"><b>العلوم الفيزيائية</b><span>تحول كيميائي وموازنة المعادلات</span></button>
-      <button class="mode" style="--c:var(--math)" data-m="math"><b>الرياضيات</b><span>الأعداد النسبية والكسور</span></button>
+      <button class="mode" style="--c:var(--chem)" data-m="chem"><b>العلوم الفيزيائية</b><span>التحول الكيميائي، الأنواع والأفراد، موازنة المعادلات</span></button>
+      <button class="mode" style="--c:var(--math)" data-m="math"><b>الرياضيات</b><span>الأعداد النسبية، مقارنة الكسور وحساباتها</span></button>
       <button class="mode" style="--c:var(--ink)" data-m="all"><b>اختبار شامل</b><span>كل الأسئلة معًا</span></button>
     </div>
   </section>
@@ -73,7 +75,7 @@ p.sub{color:var(--mut);margin:0 0 1.2em}
     <div class="nav"><button id="next" class="btn hide">التالي</button></div>
   </section>
   <section id="end" class="card hide"></section>
-</main>
+<p class="foot">بالتوفيق للجميع</p></main>
 <script>
 const F=s=>s.replace(/\{(-?\d+)\/(\d+)\}/g,'<span class="fr"><i>$1</i><i>$2</i></span>');
 const sub=s=>s.replace(/([A-Za-z\)])(\d+)/g,'$1<sub>$2</sub>');
@@ -86,6 +88,10 @@ const Q=[
 M('في التحليل الكهربائي للماء، لماذا نضيف الصودا (هيدروكسيد الصوديوم)؟',['لتغيير لون الماء','لجعل المحلول ناقلًا للتيار الكهربائي','لتبريد المحلول','لتسريع تبخر الماء'],1,'الماء النقي ضعيف التوصيل، والصودا تجعله محلولًا شاردياً يوصل التيار ويسمى «الإلكتروليت».','chem'),
 M('الأفراد الكيميائية (مجهريًا) للمتفاعل في التحليل الكهربائي للماء هي:',['جزيئات H₂O','ذرات O وذرات H منفصلة','جزيئات O₂ فقط','شوارد Na⁺ فقط'],0,'المتفاعل هو الماء، أي جزيئات H₂O.','chem'),
 M('الأنواع الكيميائية الناتجة عن التحليل الكهربائي للماء هي:',['غاز الأكسجين وغاز الهيدروجين','غاز الأكسجين وغاز الآزوت','الهيدروجين والصودا','CO₂ وH₂O'],0,'ينتج غاز الأكسجين O₂ وغاز الهيدروجين H₂.','chem'),
+M('في الكتابة الرمزية للتفاعل: ماذا يعني الرمز (aq) بجانب الصيغة؟',['صلب','سائل','غاز','محلول مائي'],3,'(s) صلب، (l) سائل، (g) غاز، (aq) محلول مائي.','chem'),
+M('كيف نكشف عن غاز الهيدروجين H₂ الناتج عن التحليل الكهربائي للماء؟',['يشعل جمرة متوهجة','يحدث فرقعة عند تقريب لهب منه','يعكّر رائق الكلس','يحمّر ورقة عباد الشمس'],1,'غاز H₂ يحدث فرقعة بوجود لهب، أما O₂ فيعيد اشتعال جمرة متوهجة.','chem'),
+M('أي نوع يمثل «الفرد الكيميائي» للمادة (النوع الكيميائي) غاز الأكسجين؟',['ذرة O','جزيئة O₂','شاردة O²⁻','جزيئة O₃'],1,'غاز الأكسجين نوع كيميائي (عيانيًا) وفرده الكيميائي (مجهريًا) هو الجزيئة O₂.','chem'),
+M('أثناء التحول الكيميائي، ما الذي ينحفظ؟',['عدد الجزيئات','الأنواع الكيميائية','الكتلة وعدد الذرات من كل نوع','الحالة الفيزيائية'],2,'تنحفظ الكتلة وعدد الذرات من كل عنصر، ولهذا نوازن المعادلة.','chem'),
 B(['H2O(l)'],['H2(g)','O2(g)'],[2,2,1],'2H₂O → 2H₂ + O₂'),
 B(['Fe','HCl'],['FeCl2','H2'],[1,2,1,1],'Fe + 2HCl → FeCl₂ + H₂'),
 B(['CuO','C'],['CO2','Cu'],[2,1,1,2],'2CuO + C → CO₂ + 2Cu'),
@@ -160,9 +166,9 @@ function check(ok,q,d){
  const n=$('next');n.textContent=i===L.length-1?'النتيجة':'التالي';n.classList.remove('hide');n.focus();}
 $('next').onclick=()=>{i++;i<L.length?show():finish()};
 function finish(){$('quiz').classList.add('hide');const e=$('end');e.classList.remove('hide');
- const p=Math.round(score/L.length*100);
- const msg=p>=80?'ممتاز! مستوى رائع.':p>=50?'جيد، راجع الأخطاء وأعد المحاولة.':'لا بأس، راجع الدروس وأعد المحاولة.';
- e.innerHTML=`<div class="score">${score} / ${L.length}</div><p style="text-align:center;margin:0">${msg}</p>
+ const n20=(score/L.length*20).toFixed(1).replace('.0',''),p=score/L.length*100,nm=$('nm').value.trim();
+ const msg=(nm?nm+': ':'')+(p>=80?'ممتاز! عمل رائع.':p>=50?'نتيجة حسنة، راجع الأخطاء وأعد المحاولة.':'تحتاج إلى مزيد من المراجعة، أعد المحاولة بعد مراجعة الدرس.');
+ e.innerHTML=`<div class="score"><span class="ltr">${n20} / 20</span></div><p style="text-align:center;color:var(--mut);margin:0">${score} إجابة صحيحة من ${L.length}</p><p style="text-align:center;margin:0">${msg}</p>
  <div class="rev">${res.map(([o,q],j)=>`<div class="${o?'g':'w'}">${j+1}. ${q.t==='bal'?'<span class="ltr">'+sub(q.r.join(' + ')+' → '+q.p.join(' + '))+'</span>':F(q.q)}</div>`).join('')}</div>
  <button class="btn" id="re">إعادة الاختبار</button>`;
  $('re').onclick=()=>{e.classList.add('hide');$('home').classList.remove('hide')};}
